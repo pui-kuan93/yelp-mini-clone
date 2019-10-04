@@ -14,7 +14,9 @@ const RestaurantsList = ({ title, restaurants, navigation }) => {
         keyExtractor={(restaurants) => restaurants.id}
         renderItem={({ item }) => {
           return (
-            <TouchableOpacity onPress={() => navigation.navigate('RestaurantsShow')}>
+            <TouchableOpacity
+              onPress={() => navigation.navigate('RestaurantsShow', { id: item.id })}
+            >
               <RestaurantsDetail results={item} />
             </TouchableOpacity>
           );
